@@ -66,3 +66,7 @@ vcpkg_installed/
 # test output & cache
 Testing/
 .cache/
+/.vs
+/Framework/Core/x64
+/Engine/MoonEngine/x64
+/Engine/MoonEngine/.vs
