@@ -1,1 +1,12 @@
-<Solution />
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Engine/">
+    <Project Path="Engine/MoonEngine/MoonEngine.vcxproj" Id="9e7738cc-345d-4c72-96bd-eb07d77cd304" />
+  </Folder>
+  <Folder Name="/Framework/">
+    <Project Path="Framework/Core/Core.vcxproj" Id="076b5156-35bc-45b8-9ed4-5fbb22da9756" />
+  </Folder>
+</Solution>
