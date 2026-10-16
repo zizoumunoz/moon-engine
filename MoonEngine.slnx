@@ -9,4 +9,7 @@
   <Folder Name="/Framework/">
     <Project Path="Framework/Core/Core.vcxproj" Id="076b5156-35bc-45b8-9ed4-5fbb22da9756" />
   </Folder>
+  <Folder Name="/VGP242/">
+    <Project Path="VGP242/01_HelloWindow/01_HelloWindow.vcxproj" Id="b51b97d9-a71c-430e-9441-708fcc897f7b" />
+  </Folder>
 </Solution>
