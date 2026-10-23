@@ -8,7 +8,7 @@ namespace MoonEngine::Core
 		void Initialize(HINSTANCE instance, const std::wstring& appName, uint32_t width, uint32_t height);
 		void Terminate();
 
-		void ProcessMessaege();
+		void ProcessMessage();
 
 		HWND GetWindowHandle() const;
 		bool IsActive() const;

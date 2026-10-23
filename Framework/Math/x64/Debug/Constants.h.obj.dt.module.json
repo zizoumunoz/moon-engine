@@ -1,0 +1,15 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "x64\\Debug\\Constants.obj",
+            "outputs": [
+                "x64\\Debug\\Constants.h.obj.dt.module.json",
+                "x64\\Debug\\Constants.h.obj.dt.d.json",
+                "x64\\Debug\\Math.pch"
+            ],
+            "requires": []
+        }
+    ]
+}

@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Inc\App.h" />
+    <ClInclude Include="Inc\AppState.h" />
     <ClInclude Include="Inc\Common.h" />
     <ClInclude Include="Inc\MoonEngine.h" />
     <ClInclude Include="Src\Precompiled.h" />
@@ -161,6 +162,12 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Framework\Core\Core.vcxproj">
       <Project>{076b5156-35bc-45b8-9ed4-5fbb22da9756}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\Graphics\Graphics.vcxproj">
+      <Project>{38d16df1-000b-4dc7-b738-c01b6b43c204}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\Math\Math.vcxproj">
+      <Project>{da4752b7-cf3d-4afb-abfa-9901d213a34c}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

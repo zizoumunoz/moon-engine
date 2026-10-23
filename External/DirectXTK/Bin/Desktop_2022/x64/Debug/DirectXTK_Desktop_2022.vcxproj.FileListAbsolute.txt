@@ -1,0 +1,1 @@
+C:\Users\zmuno\Documents\Local\moon-engine\External\DirectXTK\Bin\Desktop_2022\x64\Debug\DirectXTK.lib

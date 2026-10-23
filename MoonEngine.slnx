@@ -6,8 +6,13 @@
   <Folder Name="/Engine/">
     <Project Path="Engine/MoonEngine/MoonEngine.vcxproj" Id="9e7738cc-345d-4c72-96bd-eb07d77cd304" />
   </Folder>
+  <Folder Name="/External/">
+    <Project Path="External/DirectXTK/DirectXTK_Desktop_2022.vcxproj" Id="e0b52ae7-e160-4d32-bf3f-910b785e5a8e" />
+  </Folder>
   <Folder Name="/Framework/">
     <Project Path="Framework/Core/Core.vcxproj" Id="076b5156-35bc-45b8-9ed4-5fbb22da9756" />
+    <Project Path="Framework/Graphics/Graphics.vcxproj" Id="38d16df1-000b-4dc7-b738-c01b6b43c204" />
+    <Project Path="Framework/Math/Math.vcxproj" Id="da4752b7-cf3d-4afb-abfa-9901d213a34c" />
   </Folder>
   <Folder Name="/VGP242/">
     <Project Path="VGP242/01_HelloWindow/01_HelloWindow.vcxproj" Id="b51b97d9-a71c-430e-9441-708fcc897f7b" />

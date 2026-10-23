@@ -3,12 +3,13 @@
 
 using namespace MoonEngine;
 using namespace MoonEngine::Core;
+using namespace MoonEngine::Graphics;
 
 void App::Run(const AppConfig& config)
 {
 	LOG("App Started");
 
-	// initialize all singletons
+	// initialize all singletons and window(staticInitialize)
 	Window myWindow;
 	myWindow.Initialize(
 		GetModuleHandle(nullptr),
@@ -18,13 +19,17 @@ void App::Run(const AppConfig& config)
 	);
 
 
+	auto handle = myWindow.GetWindowHandle();
+	GraphicsSystem::StaticInitialize(handle, false);
+
 	// initialize starting state
 
 	// updates
+
 	m_isRunning = true;
 	while (m_isRunning)
 	{
-		myWindow.ProcessMessaege();
+		myWindow.ProcessMessage();
 		// updating all that needs updates
 		if (!myWindow.IsActive())
 		{
@@ -38,10 +43,20 @@ void App::Run(const AppConfig& config)
 
 	// terminate all singletons
 
+	GraphicsSystem::StaticTerminate();
 	myWindow.Terminate();
 }
 
 void App::Quit()
 {
 	m_isRunning = false;
+}
+
+void MoonEngine::App::ChangeState(const std::string& stateName)
+{
+	auto iter = m_appStates.find(stateName);
+	if (iter != m_appStates.end())
+	{
+		m_nextState = iter->second.get();
+	}
 }
