@@ -29,7 +29,7 @@ namespace MoonEngine
 			{
 				auto& ptr = iter->second;
 				ptr = std::make_unique<StateType>();
-				if (m_currentState = nullptr)
+				if (m_currentState == nullptr)
 				{
 					LOG("App: Current state %s", stateName.c_str());
 					m_currentState = ptr.get();

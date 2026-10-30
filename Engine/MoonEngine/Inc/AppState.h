@@ -6,7 +6,7 @@ namespace MoonEngine
 	{
 	public:
 		virtual ~AppState() = default;
-		virtual void Intialize() {}
+		virtual void Initialize() {}
 		virtual void Terminate() {}
 		virtual void Update(float deltaTime) {}
 		virtual void Render() {}
