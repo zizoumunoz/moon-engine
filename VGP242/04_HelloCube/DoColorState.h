@@ -10,9 +10,6 @@ public:
 	void Render() override;
 	void Terminate() override;
 private:
-	
-	
-
 	using Vertices = std::vector<MoonEngine::Graphics::VertexPC>;
 	Vertices m_vertices;
 

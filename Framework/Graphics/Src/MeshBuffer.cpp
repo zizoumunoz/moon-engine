@@ -20,15 +20,9 @@ void MoonEngine::Graphics::MeshBuffer::SetTopology(Topology topology)
 {
 	switch (topology)
 	{
-	case MoonEngine::Graphics::MeshBuffer::Topology::Points:
-		m_topology = D3D11_PRIMITIVE_TOPOLOGY_POINTLIST;
-		break;
-	case MoonEngine::Graphics::MeshBuffer::Topology::Lines:
-		m_topology = D3D11_PRIMITIVE_TOPOLOGY_LINELIST;
-		break;
-	case MoonEngine::Graphics::MeshBuffer::Topology::Triangles:
-		m_topology = D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
-		break;
+	case MoonEngine::Graphics::MeshBuffer::Topology::Points: m_topology = D3D11_PRIMITIVE_TOPOLOGY_POINTLIST; break;
+	case MoonEngine::Graphics::MeshBuffer::Topology::Lines:m_topology = D3D11_PRIMITIVE_TOPOLOGY_LINELIST; break;
+	case MoonEngine::Graphics::MeshBuffer::Topology::Triangles:m_topology = D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST; break;
 	default:
 		break;
 	}
@@ -37,7 +31,7 @@ void MoonEngine::Graphics::MeshBuffer::SetTopology(Topology topology)
 void MoonEngine::Graphics::MeshBuffer::Render() const
 {
 	auto context = GraphicsSystem::Get()->GetContext();
-	context->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+	context->IASetPrimitiveTopology(m_topology);
 
 	UINT offset = 0;
 	context->IASetVertexBuffers(0, 1, &m_vertexBuffer, &m_vertexSize, &offset);

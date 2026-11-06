@@ -30,15 +30,15 @@ void DoColorState::Initialize()
 	m_vertices.push_back({ { 1, -1, 1 }, Colors::Green });
 
 	m_vertices.push_back({ { 1, -1, -1 }, Colors::Purple });
-	m_vertices.push_back({ { 1, -1, 1 }, Colors::Purple });
 	m_vertices.push_back({ { 1, 1, 1 }, Colors::Purple });
+	m_vertices.push_back({ { 1, -1, 1 }, Colors::Purple });
 
 
 
 	// create a shape
 
 	m_meshBuffer.Initialize(m_vertices.data(), sizeof(VertexPC), m_vertices.size());
-	std::filesystem::path shaderPath = L"../../Assets/Shaders/DoColor.fx";
+	std::filesystem::path shaderPath = L"../../Assets/Shaders/DoTransform.fx";
 	m_vertexShader.Initialize<VertexPC>(shaderPath);
 	m_pixelShader.Initialize(shaderPath);
 
@@ -85,7 +85,7 @@ void DoColorState::Render()
 {
 	m_vertexShader.Bind();
 	m_pixelShader.Bind();
-	m_meshBuffer.Render();
+	m_transformBuffer.BindVS(0);
 
 	// update buffer data
 	Math::Matrix4 matWorld = Math::Matrix4::Identity;
@@ -101,6 +101,7 @@ void DoColorState::Render()
 void DoColorState::Terminate()
 {
 	m_vertices.clear();
+	m_transformBuffer.Terminate();
 	m_pixelShader.Terminate();
 	m_vertexShader.Terminate();
 	m_meshBuffer.Terminate();

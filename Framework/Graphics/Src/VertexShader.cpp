@@ -46,11 +46,9 @@ namespace
 	}
 }
 
-void MoonEngine::Graphics::VertexShader::Initialize(const std::filesystem::path& shaderPath, uint32_t format)
+void VertexShader::Initialize(const std::filesystem::path& shaderPath, uint32_t format)
 {
 	auto device = GraphicsSystem::Get()->GetDevice();
-
-
 
 	DWORD shaderFlags = D3DCOMPILE_ENABLE_STRICTNESS | D3DCOMPILE_DEBUG;
 	ID3DBlob* shaderBlob = nullptr;
@@ -78,9 +76,7 @@ void MoonEngine::Graphics::VertexShader::Initialize(const std::filesystem::path&
 	ASSERT(SUCCEEDED(hr), "Failed to create vertex shader");
 	//==========
 	// what is the make up of the vertex
-	std::vector<D3D11_INPUT_ELEMENT_DESC> vertexLayout;
-	vertexLayout.push_back({ "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, D3D11_APPEND_ALIGNED_ELEMENT });
-	vertexLayout.push_back({ "COLOR", 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, D3D11_APPEND_ALIGNED_ELEMENT });
+	std::vector<D3D11_INPUT_ELEMENT_DESC> vertexLayout = GetVertexLayout(format);
 
 	hr = device->CreateInputLayout(
 		vertexLayout.data(),
@@ -95,13 +91,13 @@ void MoonEngine::Graphics::VertexShader::Initialize(const std::filesystem::path&
 
 }
 
-void MoonEngine::Graphics::VertexShader::Terminate()
+void VertexShader::Terminate()
 {
 	SafeRelease(m_inputLayout);
 	SafeRelease(m_vertexShader);
 }
 
-void MoonEngine::Graphics::VertexShader::Bind()
+void VertexShader::Bind()
 {
 	auto context = GraphicsSystem::Get()->GetContext();
 	context->VSSetShader(m_vertexShader, nullptr, 0);
