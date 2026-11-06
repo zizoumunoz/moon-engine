@@ -7,6 +7,7 @@
   <Folder Name="/Assets/Shaders/">
     <File Path="Assets/Shaders/DoColor.fx" />
     <File Path="Assets/Shaders/DoSomething.fx" />
+    <File Path="Assets/Shaders/DoTransform.fx" />
   </Folder>
   <Folder Name="/Engine/">
     <Project Path="Engine/MoonEngine/MoonEngine.vcxproj" Id="9e7738cc-345d-4c72-96bd-eb07d77cd304" />
@@ -24,5 +25,6 @@
     <Project Path="VGP242/01_HelloWindow/01_HelloWindow.vcxproj" Id="b51b97d9-a71c-430e-9441-708fcc897f7b" />
     <Project Path="VGP242/02_HelloAppState/02_HelloAppState.vcxproj" Id="7fa3e2c0-59ff-4cb3-a9d3-e5c946c8e736" />
     <Project Path="VGP242/03_HelloShapes/03_HelloShapes.vcxproj" Id="ac50bcb9-db9e-4378-9c5f-3dff5ff14d36" />
+    <Project Path="VGP242/04_HelloCube/04_HelloCube.vcxproj" Id="4d209c8c-357e-48f9-9ab2-d51169a693b6" />
   </Folder>
 </Solution>

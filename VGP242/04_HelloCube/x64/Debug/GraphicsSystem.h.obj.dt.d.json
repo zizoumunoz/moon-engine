@@ -1,0 +1,12 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\zmuno\\documents\\local\\moon-engine\\framework\\graphics\\inc\\graphicssystem.h",
+        "ProvidedModule": "",
+        "Includes": [
+            "c:\\users\\zmuno\\documents\\local\\moon-engine\\framework\\graphics\\inc\\color.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
