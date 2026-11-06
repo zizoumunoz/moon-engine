@@ -15,19 +15,20 @@ void DoColorState::Initialize()
 	// each side is 2 triangles
 	// each triangle is 3 vertices
 	// vertcie must be in clockwise order
-	
+
 	// front 
-	m_vertices.push_back({ { -1.f, 0.f, -1.f }, Colors::Red });
-	m_vertices.push_back({ { 0.f, 1.f, -1 }, Colors::Red });
-	m_vertices.push_back({ { 1, 0, 0 }, Colors::Red });
+	m_vertices.push_back({ { -1, -1, -1 }, Colors::Red });
+	m_vertices.push_back({ { -1, 1, -1 }, Colors::Red });
+	m_vertices.push_back({ { 1, 1, -1 }, Colors::Red });
 
 	m_vertices.push_back({ { -1, -1, -1 }, Colors::Blue });
-	m_vertices.push_back({ { -1, 1, -1 }, Colors::Blue });
+	m_vertices.push_back({ { 1, 1, -1 }, Colors::Blue });
 	m_vertices.push_back({ { 1, -1, -1 }, Colors::Blue });
 
+	// right
 	m_vertices.push_back({ { 1, -1, -1 }, Colors::Green });
+	m_vertices.push_back({ { 1, 1, -1 }, Colors::Green });
 	m_vertices.push_back({ { 1, 1, 1 }, Colors::Green });
-	m_vertices.push_back({ { 1, -1, 1 }, Colors::Green });
 
 	m_vertices.push_back({ { 1, -1, -1 }, Colors::Purple });
 	m_vertices.push_back({ { 1, 1, 1 }, Colors::Purple });
@@ -66,11 +67,11 @@ void DoColorState::Update(float deltaTime)
 	{
 		m_camera.Strafe(-moveSpeed * deltaTime);
 	}
-	if (input->IsKeyDown(KeyCode::D))
+	if (input->IsKeyDown(KeyCode::Q))
 	{
 		m_camera.Rise(moveSpeed * deltaTime);
 	}
-	else if (input->IsKeyDown(KeyCode::A))
+	else if (input->IsKeyDown(KeyCode::E))
 	{
 		m_camera.Rise(-moveSpeed * deltaTime);
 	}
