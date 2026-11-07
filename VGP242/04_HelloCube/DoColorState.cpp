@@ -16,7 +16,7 @@ void DoColorState::Initialize()
 	// each triangle is 3 vertices
 	// vertcie must be in clockwise order
 
-	// front 
+	// front
 	m_vertices.push_back({ { -1, -1, -1 }, Colors::Red });
 	m_vertices.push_back({ { -1, 1, -1 }, Colors::Red });
 	m_vertices.push_back({ { 1, 1, -1 }, Colors::Red });
@@ -25,14 +25,50 @@ void DoColorState::Initialize()
 	m_vertices.push_back({ { 1, 1, -1 }, Colors::Blue });
 	m_vertices.push_back({ { 1, -1, -1 }, Colors::Blue });
 
-	// right
-	m_vertices.push_back({ { 1, -1, -1 }, Colors::Green });
-	m_vertices.push_back({ { 1, 1, -1 }, Colors::Green });
-	m_vertices.push_back({ { 1, 1, 1 }, Colors::Green });
+	// back
+	m_vertices.push_back({ { 1, -1, 1 }, Colors::Orange });
+	m_vertices.push_back({ { 1, 1, 1 }, Colors::Orange });
+	m_vertices.push_back({ { -1, 1, 1 }, Colors::Orange });
 
+	m_vertices.push_back({ { 1, -1, 1 }, Colors::Green });
+	m_vertices.push_back({ { -1, 1, 1 }, Colors::Green });
+	m_vertices.push_back({ { -1, -1, 1 }, Colors::Green });
+
+	// right
 	m_vertices.push_back({ { 1, -1, -1 }, Colors::Purple });
+	m_vertices.push_back({ { 1, 1, -1 }, Colors::Purple });
 	m_vertices.push_back({ { 1, 1, 1 }, Colors::Purple });
-	m_vertices.push_back({ { 1, -1, 1 }, Colors::Purple });
+
+	m_vertices.push_back({ { 1, -1, -1 }, Colors::Yellow });
+	m_vertices.push_back({ { 1, 1, 1 }, Colors::Yellow });
+	m_vertices.push_back({ { 1, -1, 1 }, Colors::Yellow });
+
+	// left
+	m_vertices.push_back({ { -1, -1, 1 }, Colors::Cyan });
+	m_vertices.push_back({ { -1, 1, 1 }, Colors::Cyan });
+	m_vertices.push_back({ { -1, 1, -1 }, Colors::Cyan });
+
+	m_vertices.push_back({ { -1, -1, 1 }, Colors::Lavender });
+	m_vertices.push_back({ { -1, 1, -1 }, Colors::Lavender });
+	m_vertices.push_back({ { -1, -1, -1 }, Colors::Lavender });
+
+	// top
+	m_vertices.push_back({ { -1, 1, -1 }, Colors::RosyBrown });
+	m_vertices.push_back({ { -1, 1, 1 }, Colors::RosyBrown });
+	m_vertices.push_back({ { 1, 1, 1 }, Colors::RosyBrown });
+
+	m_vertices.push_back({ { -1, 1, -1 }, Colors::Violet });
+	m_vertices.push_back({ { 1, 1, 1 }, Colors::Violet });
+	m_vertices.push_back({ { 1, 1, -1 }, Colors::Violet });
+
+	// bottom
+	m_vertices.push_back({ { -1, -1, 1 }, Colors::White });
+	m_vertices.push_back({ { -1, -1, -1 }, Colors::White });
+	m_vertices.push_back({ { 1, -1, -1 }, Colors::White });
+
+	m_vertices.push_back({ { -1, -1, 1 }, Colors::Honeydew });
+	m_vertices.push_back({ { 1, -1, -1 }, Colors::Honeydew });
+	m_vertices.push_back({ { 1, -1, 1 }, Colors::Honeydew });
 
 
 
