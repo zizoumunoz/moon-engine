@@ -5,9 +5,30 @@ using namespace MoonEngine::Input;
 void DoSomethingState::Initialize()
 {
 	// create a shape
-	m_vertices.push_back({ { -0.5f, 0.0f, 0.0f } });
-	m_vertices.push_back({ { 0.0f, 0.5f, 0.0f } });
-	m_vertices.push_back({ { 0.5f, 0.0f, 0.0f } });
+   // top tip
+	m_vertices.push_back({ { -0.1f,  0.1f, 0.0f } });
+	m_vertices.push_back({ { 0.0f,  0.5f, 0.0f } });
+	m_vertices.push_back({ { 0.1f,  0.1f, 0.0f } });
+	// right tip
+	m_vertices.push_back({ { 0.1f,  0.1f, 0.0f } });
+	m_vertices.push_back({ { 0.5f,  0.0f, 0.0f } });
+	m_vertices.push_back({ { 0.1f, -0.1f, 0.0f } });
+	// bottom tip
+	m_vertices.push_back({ { 0.1f, -0.1f, 0.0f } });
+	m_vertices.push_back({ { 0.0f, -0.5f, 0.0f } });
+	m_vertices.push_back({ { -0.1f, -0.1f, 0.0f } });
+	// left tip
+	m_vertices.push_back({ { -0.1f, -0.1f, 0.0f } });
+	m_vertices.push_back({ { -0.5f,  0.0f, 0.0f } });
+	m_vertices.push_back({ { -0.1f,  0.1f, 0.0f } });
+	// centre square 1 half
+	m_vertices.push_back({ { -0.1f,  0.1f, 0.0f } });
+	m_vertices.push_back({ { 0.1f,  0.1f, 0.0f } });
+	m_vertices.push_back({ { 0.1f, -0.1f, 0.0f } });
+	// centre square other half
+	m_vertices.push_back({ { -0.1f,  0.1f, 0.0f } });
+	m_vertices.push_back({ { 0.1f, -0.1f, 0.0f } });
+	m_vertices.push_back({ { -0.1f, -0.1f, 0.0f } });
 
 	// start creating the components that communicate with  GPU
 	auto device = GraphicsSystem::Get()->GetDevice();
@@ -97,7 +118,10 @@ void DoSomethingState::Initialize()
 
 void DoSomethingState::Update(float deltaTime)
 {
-	// leave for now
+	if (InputSystem::Get()->IsKeyPressed(KeyCode::SPACE))
+	{
+		MainApp().ChangeState("DoColorState");
+	}
 }
 
 void DoSomethingState::Render()

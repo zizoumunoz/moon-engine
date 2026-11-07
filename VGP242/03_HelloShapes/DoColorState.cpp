@@ -5,10 +5,15 @@ using namespace MoonEngine::Graphics;
 using namespace MoonEngine::Input;
 void DoColorState::Initialize()
 {
-	// create a shape
-	m_vertices.push_back({ { -0.5f, 0.0f, 0.0f } , Colors::Red });
-	m_vertices.push_back({ { 0.0f, 0.5f, 0.0f } ,Colors::Red });
-	m_vertices.push_back({ { 0.5f, 0.0f, 0.0f }, Colors::Red });
+	// CHEVRON
+	// top half
+	m_vertices.push_back({ { -0.5f,  0.5f, 0.0f }, Colors::Cyan });
+	m_vertices.push_back({ { 0.5f,  0.0f, 0.0f }, Colors::Cyan });
+	m_vertices.push_back({ { -0.2f,  0.0f, 0.0f }, Colors::Cyan });
+	// bottom half
+	m_vertices.push_back({ { -0.2f,  0.0f, 0.0f }, Colors::Purple });
+	m_vertices.push_back({ { 0.5f,  0.0f, 0.0f }, Colors::Purple });
+	m_vertices.push_back({ { -0.5f,  -0.5f, 0.0f }, Colors::Purple });
 
 	// start creating the components that communicate with  GPU
 	auto device = GraphicsSystem::Get()->GetDevice();
@@ -29,7 +34,7 @@ void DoColorState::Initialize()
 	// ===========
 
 	// bind to the shader file
-	std::filesystem::path shaderFilePath = L"../../Assets/Shaders/DoSomething.fx";
+	std::filesystem::path shaderFilePath = L"../../Assets/Shaders/DoColor.fx";
 
 	DWORD shaderFlags = D3DCOMPILE_ENABLE_STRICTNESS | D3DCOMPILE_DEBUG;
 	ID3DBlob* shaderBlob = nullptr;
@@ -102,7 +107,7 @@ void DoColorState::Update(float deltaTime)
 	// leave for now
 	if (InputSystem::Get()->IsKeyPressed(KeyCode::SPACE))
 	{
-		MainApp().ChangeState("DoSomethingState");
+		MainApp().ChangeState("DoPauseButtonState");
 	}
 }
 

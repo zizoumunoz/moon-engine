@@ -24,12 +24,18 @@
     <ClCompile Include="DoColorState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DoPauseButtonState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DoSomethingState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DoColorState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DoPauseButtonState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

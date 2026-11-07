@@ -149,11 +149,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DoColorState.cpp" />
+    <ClCompile Include="DoPauseButtonState.cpp" />
     <ClCompile Include="DoSomethingState.cpp" />
     <ClCompile Include="WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DoColorState.h" />
+    <ClInclude Include="DoPauseButtonState.h" />
     <ClInclude Include="DoSomethingState.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
