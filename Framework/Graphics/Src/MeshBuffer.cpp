@@ -6,14 +6,22 @@ using namespace MoonEngine;
 using namespace MoonEngine::Graphics;
 
 
-void MoonEngine::Graphics::MeshBuffer::Initialize(const void* vertices, uint32_t vertexSize, uint32_t vertexCount)
+void MeshBuffer::Initialize(const void* vertices, uint32_t vertexSize, uint32_t vertexCount)
 {
 	CreateVertexBuffer(vertices, vertexSize, vertexCount);
+}
+
+void MeshBuffer::Initialize(const void* vertices, uint32_t vertexSize, uint32_t vertexCount, const void* indices, uint32_t indexCount)
+{
+	CreateVertexBuffer(vertices, vertexSize, vertexCount);
+	CreateIndexBuffer(indices, indexCount);
+
 }
 
 void MoonEngine::Graphics::MeshBuffer::Terminate()
 {
 	SafeRelease(m_vertexBuffer);
+	SafeRelease(m_indexBuffer);
 }
 
 void MoonEngine::Graphics::MeshBuffer::SetTopology(Topology topology)
@@ -35,7 +43,15 @@ void MoonEngine::Graphics::MeshBuffer::Render() const
 
 	UINT offset = 0;
 	context->IASetVertexBuffers(0, 1, &m_vertexBuffer, &m_vertexSize, &offset);
-	context->Draw(m_vertexCount, 0);
+	if (m_indexBuffer != nullptr)
+	{
+		context->IASetIndexBuffer(m_indexBuffer, DXGI_FORMAT_R32_UINT, 0);
+		context->DrawIndexed((UINT)m_indexCount, 0, 0);
+	}
+	else
+	{
+		context->Draw(m_vertexCount, 0);
+	}
 }
 
 void MoonEngine::Graphics::MeshBuffer::CreateVertexBuffer(const void* vertices, uint32_t vertexSize, uint32_t vertexCount)
@@ -57,4 +73,31 @@ void MoonEngine::Graphics::MeshBuffer::CreateVertexBuffer(const void* vertices, 
 
 	HRESULT hr = device->CreateBuffer(&bufferDesc, &initData, &m_vertexBuffer);
 	ASSERT(SUCCEEDED(hr), "Failed to create vertex buffer");
+}
+
+void MeshBuffer::CreateIndexBuffer(const void* indices, uint32_t indexCount)
+{
+	if (indexCount == 0)
+	{
+		return;
+
+	}
+
+	m_indexCount = indexCount;
+
+	auto device = GraphicsSystem::Get()->GetDevice();
+
+	// index buffer
+	D3D11_BUFFER_DESC bufferDesc{};
+	bufferDesc.ByteWidth = static_cast<UINT>(indexCount) * sizeof(uint32_t);
+	bufferDesc.Usage = D3D11_USAGE_DEFAULT;
+	bufferDesc.BindFlags = D3D11_BIND_INDEX_BUFFER;
+	bufferDesc.MiscFlags = 0;
+	bufferDesc.StructureByteStride = 0;
+
+	D3D11_SUBRESOURCE_DATA initData{};
+	initData.pSysMem = indices;
+
+	HRESULT hr = device->CreateBuffer(&bufferDesc, &initData, &m_indexBuffer);
+	ASSERT(SUCCEEDED(hr), "Failed to create index buffer");
 }

@@ -26,5 +26,6 @@
     <Project Path="VGP242/02_HelloAppState/02_HelloAppState.vcxproj" Id="7fa3e2c0-59ff-4cb3-a9d3-e5c946c8e736" />
     <Project Path="VGP242/03_HelloShapes/03_HelloShapes.vcxproj" Id="ac50bcb9-db9e-4378-9c5f-3dff5ff14d36" />
     <Project Path="VGP242/04_HelloCube/04_HelloCube.vcxproj" Id="4d209c8c-357e-48f9-9ab2-d51169a693b6" />
+    <Project Path="VGP242/05_HelloMeshBuilder/05_HelloMeshBuilder.vcxproj" Id="a8332fcb-322d-4cb8-bb33-282a458e14db" />
   </Folder>
 </Solution>

@@ -347,9 +347,11 @@
             "c:\\users\\zmuno\\documents\\local\\moon-engine\\framework\\graphics\\inc\\constantbuffer.h",
             "c:\\users\\zmuno\\documents\\local\\moon-engine\\framework\\graphics\\inc\\graphicssystem.h",
             "c:\\users\\zmuno\\documents\\local\\moon-engine\\framework\\graphics\\inc\\meshbuffer.h",
+            "c:\\users\\zmuno\\documents\\local\\moon-engine\\framework\\graphics\\inc\\meshbuilder.h",
+            "c:\\users\\zmuno\\documents\\local\\moon-engine\\framework\\graphics\\inc\\meshtypes.h",
+            "c:\\users\\zmuno\\documents\\local\\moon-engine\\framework\\graphics\\inc\\vertextypes.h",
             "c:\\users\\zmuno\\documents\\local\\moon-engine\\framework\\graphics\\inc\\pixelshader.h",
-            "c:\\users\\zmuno\\documents\\local\\moon-engine\\framework\\graphics\\inc\\vertexshader.h",
-            "c:\\users\\zmuno\\documents\\local\\moon-engine\\framework\\graphics\\inc\\vertextypes.h"
+            "c:\\users\\zmuno\\documents\\local\\moon-engine\\framework\\graphics\\inc\\vertexshader.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
