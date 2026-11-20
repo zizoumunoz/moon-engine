@@ -1,0 +1,62 @@
+#include "Precompiled.h"
+#include "Texture.h"
+#include "GraphicsSystem.h"
+#include <DirectXTK/Inc/WICTextureLoader.h>
+
+using namespace MoonEngine;
+using namespace MoonEngine::Graphics;
+
+void Texture::UnbindPS(uint32_t slot)
+{
+	static ID3D11ShaderResourceView* dummy = nullptr;
+	GraphicsSystem::Get()->GetContext()->PSSetShaderResources(slot, 1, &dummy);
+}
+
+Texture::~Texture()
+{
+	ASSERT(m_shaderResourceView == nullptr, "Texture: terminate must be called");
+}
+
+Texture::Texture(Texture&& rhs) noexcept
+	: m_shaderResourceView(rhs.m_shaderResourceView)
+{
+	rhs.m_shaderResourceView = nullptr;
+}
+
+Texture& Texture::operator=(Texture&& rhs)
+{
+	m_shaderResourceView = rhs.m_shaderResourceView;
+	rhs.m_shaderResourceView = nullptr;
+	return *this;
+}
+
+void Texture::Initialize(const std::filesystem::path& fileName)
+{
+	auto device = GraphicsSystem::Get()->GetDevice();
+	auto context = GraphicsSystem::Get()->GetContext();
+	HRESULT hr = DirectX::CreateWICTextureFromFile(device, context, fileName.c_str(), nullptr, &m_shaderResourceView);
+	ASSERT(SUCCEEDED(hr), "Texture: failed to create texture %s", fileName.u8string().c_str());
+}
+
+void Texture::Terminate()
+{
+	SafeRelease(m_shaderResourceView);
+}
+
+void Texture::BindVS(uint32_t slot) const
+{
+	auto context = GraphicsSystem::Get()->GetContext();
+	context->VSSetShaderResources(slot, 1, &m_shaderResourceView);
+}
+
+void Texture::BindPS(uint32_t slot) const
+{
+	auto context = GraphicsSystem::Get()->GetContext();
+	context->PSSetShaderResources(slot, 1, &m_shaderResourceView);
+
+}
+
+void* Texture::GetRawData() const
+{
+	return m_shaderResourceView;
+}

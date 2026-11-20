@@ -351,7 +351,11 @@
             "c:\\users\\zmuno\\documents\\local\\moon-engine\\framework\\graphics\\inc\\meshtypes.h",
             "c:\\users\\zmuno\\documents\\local\\moon-engine\\framework\\graphics\\inc\\vertextypes.h",
             "c:\\users\\zmuno\\documents\\local\\moon-engine\\framework\\graphics\\inc\\pixelshader.h",
-            "c:\\users\\zmuno\\documents\\local\\moon-engine\\framework\\graphics\\inc\\vertexshader.h"
+            "c:\\users\\zmuno\\documents\\local\\moon-engine\\framework\\graphics\\inc\\vertexshader.h",
+            "c:\\users\\zmuno\\documents\\local\\moon-engine\\framework\\graphics\\inc\\texture.h",
+            "c:\\users\\zmuno\\documents\\local\\moon-engine\\framework\\graphics\\inc\\texturemanager.h",
+            "c:\\users\\zmuno\\documents\\local\\moon-engine\\framework\\graphics\\inc\\sampler.h",
+            "c:\\users\\zmuno\\documents\\local\\moon-engine\\framework\\graphics\\inc\\rendertarget.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

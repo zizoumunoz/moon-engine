@@ -5,4 +5,7 @@ C:\Users\zmuno\Documents\Local\moon-engine\Framework\Graphics\Src\MeshBuffer.cpp
 C:\Users\zmuno\Documents\Local\moon-engine\Framework\Graphics\Src\MeshBuilder.cpp;C:\Users\zmuno\Documents\Local\moon-engine\Framework\Graphics\x64\Debug\MeshBuilder.obj
 C:\Users\zmuno\Documents\Local\moon-engine\Framework\Graphics\Src\PixelShader.cpp;C:\Users\zmuno\Documents\Local\moon-engine\Framework\Graphics\x64\Debug\PixelShader.obj
 C:\Users\zmuno\Documents\Local\moon-engine\Framework\Graphics\Src\Precompiled.cpp;C:\Users\zmuno\Documents\Local\moon-engine\Framework\Graphics\x64\Debug\Precompiled.obj
+C:\Users\zmuno\Documents\Local\moon-engine\Framework\Graphics\Src\Sampler.cpp;C:\Users\zmuno\Documents\Local\moon-engine\Framework\Graphics\x64\Debug\Sampler.obj
+C:\Users\zmuno\Documents\Local\moon-engine\Framework\Graphics\Src\Texture.cpp;C:\Users\zmuno\Documents\Local\moon-engine\Framework\Graphics\x64\Debug\Texture.obj
+C:\Users\zmuno\Documents\Local\moon-engine\Framework\Graphics\Src\TextureManager.cpp;C:\Users\zmuno\Documents\Local\moon-engine\Framework\Graphics\x64\Debug\TextureManager.obj
 C:\Users\zmuno\Documents\Local\moon-engine\Framework\Graphics\Src\VertexShader.cpp;C:\Users\zmuno\Documents\Local\moon-engine\Framework\Graphics\x64\Debug\VertexShader.obj
